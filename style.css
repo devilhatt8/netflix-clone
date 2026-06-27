@@ -1,0 +1,439 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: black;
+}
+
+.main {
+  background-image: url("./images/bg.jpg");
+  height: 70vh;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main .box {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /*yahan par opacity isliye use nahi ki kyuki us se child container ka text pop out nahi kar paa raha tha*/
+}
+
+nav {
+  display: flex;
+  max-width: 80vw;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: relative;
+  z-index: 10;
+}
+
+.nav_btn {
+  display: flex;
+  gap: 20px;
+}
+
+nav img {
+  width: clamp(90px, 12vw, 115px);
+  height: auto;
+}
+
+nav button {
+  position: relative;
+  z-index: 10;
+}
+
+.hero {
+  height: calc(70vh - 60px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  z-index: 2;
+
+  color: white;
+  padding: 0 30px;
+  gap: 12px;
+
+  text-align: center;
+}
+
+.hero > :first-child {
+  font-family: "Martel Sans", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3rem);
+  max-width: 800px;
+  line-height: 1.15;
+}
+
+.hero > :nth-child(2) {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 400;
+}
+
+.hero > :nth-child(3) {
+  font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  max-width: 650px;
+}
+
+.seperation {
+  height: 7px;
+  background-color: rgb(30, 30, 30);
+}
+
+.btn {
+  padding: 4px 8px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(35, 35, 35, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn_red {
+  background-color: red;
+  color: white;
+}
+
+.btn_red:hover {
+  background-color: rgb(193, 17, 25);
+}
+
+.sn {
+  padding: 10px 24px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.hero_buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero_buttons input {
+  width: min(400px, 90vw);
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 900;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+  background-color: rgba(35, 35, 35, 0.5);
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hero_buttons input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hero_buttons input:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.hero_buttons input {
+  color: white;
+}
+
+/*first time using media queries*/
+@media (max-width: 600px) {
+  .btn {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    max-width: 95vw;
+  }
+}
+
+.first {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80vw;
+  margin: auto;
+  color: white;
+  padding: 60px 0;
+  gap: 30px;
+}
+
+.text {
+  flex: 1;
+  font-size: large;
+}
+
+.text h2 {
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.secimg {
+  flex: 1;
+  position: relative;
+  max-width: 500px;
+}
+
+.secimg img {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+.secimg video {
+  position: absolute;
+  top: 3%;
+  left: 2.5%;
+  width: auto;
+  height: 78%;
+  z-index: 1;
+}
+
+/* Trending Section Styles */
+.trending-section {
+  max-width: 80vw;
+  margin: auto;
+  padding: 60px 0;
+  color: white;
+}
+
+.trending-section h2 {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* The Horizontal Slider Container */
+.carousel {
+  display: flex;
+  gap: 40px; /* Gives space between cards to fit the big numbers */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  padding: 20px 0 20px 30px; /* Left padding prevents the '1' from being cut off */
+  scroll-behavior: smooth;
+}
+
+/* Hide the scrollbar for a cleaner, native Netflix look */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual Movie Container */
+.movie-card {
+  position: relative;
+  width: clamp(120px, 20vw, 180px);
+  aspect-ratio: 2 / 3;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Classic Netflix slight zoom on hover */
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1; /* Keeps the poster behind the number outline */
+}
+
+/* The Big Hollow Numbers */
+.rank {
+  position: absolute;
+  left: -35px; /* Pulls the number off the left edge of the poster */
+  bottom: -10px; /* Aligns it near the bottom */
+  font-size: 120px;
+  font-weight: 900;
+  color: black; /* The inside of the number */
+  -webkit-text-stroke: 3px #b3b3b3; /* The grayish-white outline */
+  line-height: 1;
+  z-index: 2; /* Puts the number on top of the image */
+}
+
+/* Make sure the text stroke looks good on smaller screens */
+@media (max-width: 600px) {
+  .movie-card {
+    width: 140px;
+  }
+
+  .rank {
+    font-size: 90px;
+    left: -25px;
+    -webkit-text-stroke: 2px #b3b3b3;
+  }
+}
+
+/* Responsive layout improvements */
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px;
+  }
+
+  .hero_buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero_buttons input {
+    width: 90%;
+  }
+
+  .sn {
+    width: 90%;
+  }
+
+  .first {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .secimg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .carousel {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: center;
+    gap: 30px;
+    padding-left: 0;
+  }
+
+  .rank {
+    left: -20px;
+  }
+}
+.faq {
+    max-width: 80vw;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.faqbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(45,45,45);
+
+    padding: 24px;
+    margin: 8px 0;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.faqbox:hover {
+    background-color: rgb(65,65,65);
+}
+.answer {
+    background-color: rgb(45,45,45);
+    margin-top: 1px;
+    padding: 0 24px;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .answer {
+    max-height: 200px;
+    padding: 24px;
+}
+
+.faq-item.active .icon {
+    transform: rotate(45deg);
+}
+
+.icon {
+    font-size: 40px;
+    transition: transform 0.3s ease;
+}
+@media (max-width: 768px) {
+    .faq {
+        max-width: 95vw;
+    }
+
+    .faqbox {
+        font-size: 18px;
+        padding: 18px;
+    }
+
+    .icon {
+        font-size: 30px;
+    }
+}
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 24px;
+    background: rgb(45,45,45);
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .answer {
+    max-height: 200px;
+    padding: 24px;
+}
+
+.icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .icon {
+    transform: rotate(45deg);
+}
